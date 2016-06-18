@@ -1,0 +1,8 @@
+/*
+  Place all compoment styles inside the heroes class selector
+*/
+$blue: blue;
+
+.<%= name %> {
+  background-color: $blue;
+}

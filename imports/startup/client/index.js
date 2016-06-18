@@ -23,6 +23,13 @@ import trythingController from '../../ui/components/trythingComponent/trythingCo
 import tryingController from '../../ui/components/tryingComponent/tryingController.js'
 import testController from '../../ui/components/testComponent/testController.js'
 import shouldController from '../../ui/components/shouldComponent/shouldController.js'
+import capitilazeController from '../../ui/components/capitilazeComponent/capitilazeController.js'
+import anotherController from '../../ui/components/anotherComponent/anotherController.js'
+import niceController from '../../ui/components/niceComponent/niceController.js'
+import funController from '../../ui/components/funComponent/funController.js'
+import niceController from '../../ui/components/niceComponent/niceController.js'
+import niceeeController from '../../ui/components/niceeeComponent/niceeeController.js'
+import testingController from '../../ui/components/testingComponent/testingController.js'
 //end controllers
 
 console.log(heroesController);
@@ -126,6 +133,41 @@ app.component('test', {
 app.component('should', {
   controller: shouldController,
   templateUrl: componentsPath + 'shouldComponent/should.html'
+})
+
+app.component('capitilaze', {
+  controller: capitilazeController,
+  templateUrl: componentsPath + 'capitilazeComponent/capitilaze.html'
+})
+
+app.component('another', {
+  controller: anotherController,
+  templateUrl: componentsPath + 'anotherComponent/another.html'
+})
+
+app.component('nice', {
+  controller: niceController,
+  templateUrl: componentsPath + 'niceComponent/nice.html'
+})
+
+app.component('fun', {
+  controller: funController,
+  templateUrl: componentsPath + 'funComponent/fun.html'
+})
+
+app.component('nice', {
+  controller: niceController,
+  templateUrl: componentsPath + 'niceComponent/nice.html'
+})
+
+app.component('niceee', {
+  controller: niceeeController,
+  templateUrl: componentsPath + 'niceeeComponent/niceee.html'
+})
+
+app.component('testing', {
+  controller: testingController,
+  templateUrl: componentsPath + 'testingComponent/testing.html'
 })
 
 //end components

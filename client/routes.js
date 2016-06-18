@@ -41,5 +41,26 @@ function config($routeProvider) {
    .when('/should' , {
       template: '<should></should>'
     })
+   .when('/capitilaze' , {
+      template: '<capitilaze></capitilaze>'
+    })
+   .when('/another' , {
+      template: '<another></another>'
+    })
+   .when('/nice' , {
+      template: '<nice></nice>'
+    })
+   .when('/fun' , {
+      template: '<fun></fun>'
+    })
+   .when('/nice' , {
+      template: '<nice></nice>'
+    })
+   .when('/niceee' , {
+      template: '<niceee></niceee>'
+    })
+   .when('/testing' , {
+      template: '<testing></testing>'
+    })
 //end routes
 }

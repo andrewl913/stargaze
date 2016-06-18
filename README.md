@@ -1,6 +1,16 @@
 # generator-stargaze [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 > scaffolds meteor routes and components
 
+
+
+## Prerequisites
+
+Built for Meteor 1.3 and assumes you have the files:
+ 'import/startup/client/index.js'
+ 'client/routes.js'
+
+
+
 ## Installation
 
 First, install [Yeoman](http://yeoman.io) and generator-stargaze using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
@@ -10,11 +20,20 @@ npm install -g yo
 npm install -g generator-stargaze
 ```
 
-Then generate your new project:
 
+Then generate your components:
+
+## Generators
+
+Component:
 ```bash
-yo stargaze
+yo stargaze:component
 ```
+ -options:
+  * css or scss for css
+  * route for the new component
+
+
 
 ## Getting To Know Yeoman
 

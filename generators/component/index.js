@@ -30,6 +30,12 @@ module.exports = yeoman.Base.extend({
       name: 'wantsRoute',
       message: 'Would you like to add a route?',
       default: true
+    }, {
+      type: 'list',
+      choices: ['css', 'scss'],
+      name: 'cssType',
+      message: 'Would you like to use scss or css?',
+      default: 'css'
     }
 
   ];
@@ -44,17 +50,24 @@ module.exports = yeoman.Base.extend({
   },
 
   writing: function (props) {
+    var styleExtension = '.css';
+
+    if(this.props.cssType === 'scss') {
+      styleExtension = '.scss';
+    }
 
     this.fs.copyTpl(
       this.templatePath('nameController.js'),
       this.destinationPath( importsPath + this.props.title+ 'Component/' + this.props.title + 'Controller.js'),
-      {name: this.props.title}
+      {name: this.props.title.capitalizeFirstLetter()}
 
     );
 
+
+
     this.fs.copyTpl(
-      this.templatePath('name.css'),
-      this.destinationPath(importsPath + this.props.title+ 'Component/' + this.props.title + '.css'),
+      this.templatePath('name' + styleExtension),
+      this.destinationPath(importsPath + this.props.title+ 'Component/' + this.props.title + styleExtension),
       {name : this.props.title}
     );
 
@@ -84,6 +97,9 @@ module.exports = yeoman.Base.extend({
 
   install: function () {
     //no dependencies to install here
+    if(this.props.cssType == 'scss') {
+      this.runInstall('meteor add fourseven:scss')
+    }
   }
 });
 
@@ -105,6 +121,8 @@ function addComponent(content) {
 }
 
 
+
+
 function addRoute(content) {
   let title = properties.title
   let routeComment = new RegExp('//end routes', 'g');
@@ -115,4 +133,12 @@ function addRoute(content) {
   )
 
   return newContent;
+}
+
+String.prototype.capitalizeFirstLetter = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1);
+}
+
+String.prototype.lowerCaseFirstLetter = function() {
+    return this.charAt(0).toLowerCase() + this.slice(1);
 }

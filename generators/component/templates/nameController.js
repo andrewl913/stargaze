@@ -1,6 +1,6 @@
 // import templates .. must import an template for every component
-import template from './<%= name %>.html';
-import styles from './<%= name %>.css'
+import template from './<%= name.lowerCaseFirstLetter() %>.html';
+import styles from './<%= name.lowerCaseFirstLetter() %>.scss'
 
 //Import any DB Collections here
 
